@@ -25,8 +25,8 @@ import { Component, Input } from '@angular/core';
 })
 
 export class LikeComponent {
-    @Input("total-likes") totalLikes = 0;
-    @Input("i-like") iLike = false;
+    @Input() totalLikes = 0;
+    @Input() iLike = false;
 
     onClick(){
         this.iLike = !this.iLike;

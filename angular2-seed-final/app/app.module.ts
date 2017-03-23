@@ -12,10 +12,24 @@ import { AutoGrowDirective } from './directives/auto-grow.directive';
 import { LikeComponent } from './like/like.component';
 import { VoterComponent } from './voter/voter.component';
 
+import { TweetComponent } from './tweet/tweet.component';
+import { TweetsComponent } from './tweet/tweets.component';
+import { TweetService } from './tweet/tweet.service';
+
+
 @NgModule({
   imports:      [ BrowserModule ],
-  declarations: [ AppComponent,  AuthorsComponent,  MessagesComponent, FavoriteComponent, AutoGrowDirective, LikeComponent, VoterComponent],
-  providers: [ AuthorsService, MessagesService ],
+  declarations: [ AppComponent,
+                  AuthorsComponent,
+                  MessagesComponent,
+                  FavoriteComponent,
+                  AutoGrowDirective,
+                  LikeComponent,
+                  VoterComponent,
+                  TweetComponent,
+                  TweetsComponent
+                  ],
+  providers: [ AuthorsService, MessagesService, TweetService ],
   bootstrap:    [ AppComponent ]
 })
 export class AppModule { }

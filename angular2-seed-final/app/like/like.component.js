@@ -22,11 +22,11 @@ var LikeComponent = (function () {
     return LikeComponent;
 }());
 __decorate([
-    core_1.Input("total-likes"),
+    core_1.Input(),
     __metadata("design:type", Object)
 ], LikeComponent.prototype, "totalLikes", void 0);
 __decorate([
-    core_1.Input("i-like"),
+    core_1.Input(),
     __metadata("design:type", Object)
 ], LikeComponent.prototype, "iLike", void 0);
 LikeComponent = __decorate([

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { TweetService } from './tweet/tweet.service';
 
 @Component({
   selector: 'my-app',
@@ -7,16 +8,27 @@ import { Component } from '@angular/core';
             <messages></messages>
             <i class="glyphicon glyphicon-star"></i>
             <favorite [is-favorite]="post.isFavorite" (change)="onFavoriteChange($event)"></favorite>
-            <like [total-likes]="tweet.totalLikes" [i-like]="tweet.iLike"></like>
+            <like [totalLikes]="tweet.totalLikes" [iLike]="tweet.iLike"></like>
             <voter
                 [voteCount]="vote.voteCount"
                 [myVote]="vote.myVote"
                 (vote)="onVote($event)">
             </voter>
+
+            <div *ngFor="let tweet of tweets">
+                <tweet [data]="tweet"></tweet>
+            </div>
            `
 })
 
 export class AppComponent {
+    tweets: any[];
+
+    constructor(tweetService: TweetService){
+        this.tweets = tweetService.getTweets();
+    }
+
+
     post = {
         title: "Title",
         isFavorite: true
