@@ -9,10 +9,12 @@ import { MessagesService } from './messages/messages.service';
 import { FavoriteComponent } from './favorite/favorite.component';
 
 import { AutoGrowDirective } from './directives/auto-grow.directive';
+import { LikeComponent } from './like/like.component';
+import { VoterComponent } from './voter/voter.component';
 
 @NgModule({
   imports:      [ BrowserModule ],
-  declarations: [ AppComponent,  AuthorsComponent,  MessagesComponent, FavoriteComponent, AutoGrowDirective],
+  declarations: [ AppComponent,  AuthorsComponent,  MessagesComponent, FavoriteComponent, AutoGrowDirective, LikeComponent, VoterComponent],
   providers: [ AuthorsService, MessagesService ],
   bootstrap:    [ AppComponent ]
 })

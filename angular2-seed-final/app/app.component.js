@@ -13,8 +13,19 @@ var AppComponent = (function () {
             title: "Title",
             isFavorite: true
         };
+        this.tweet = {
+            totalLikes: 10,
+            iLike: false
+        };
+        this.vote = {
+            voteCount: 10,
+            myVote: 0
+        };
     }
     AppComponent.prototype.onFavoriteChange = function ($event) {
+        console.log($event);
+    };
+    AppComponent.prototype.onVote = function ($event) {
         console.log($event);
     };
     return AppComponent;
@@ -22,7 +33,7 @@ var AppComponent = (function () {
 AppComponent = __decorate([
     core_1.Component({
         selector: 'my-app',
-        template: "<h1>My First Angular 2 App</h1>\n            <authors></authors>\n            <messages></messages>\n            <favorite [is-favorite]=\"post.isFavorite\" (change)=\"onFavoriteChange($event)\"></favorite>\n           "
+        template: "<h1>My First Angular 2 App</h1>\n            <authors></authors>\n            <messages></messages>\n            <i class=\"glyphicon glyphicon-star\"></i>\n            <favorite [is-favorite]=\"post.isFavorite\" (change)=\"onFavoriteChange($event)\"></favorite>\n            <like [total-likes]=\"tweet.totalLikes\" [i-like]=\"tweet.iLike\"></like>\n            <voter\n                [voteCount]=\"vote.voteCount\"\n                [myVote]=\"vote.myVote\"\n                (vote)=\"onVote($event)\">\n            </voter>\n           "
     })
 ], AppComponent);
 exports.AppComponent = AppComponent;

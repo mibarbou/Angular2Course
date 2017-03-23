@@ -15,6 +15,8 @@ var messages_component_1 = require("./messages/messages.component");
 var messages_service_1 = require("./messages/messages.service");
 var favorite_component_1 = require("./favorite/favorite.component");
 var auto_grow_directive_1 = require("./directives/auto-grow.directive");
+var like_component_1 = require("./like/like.component");
+var voter_component_1 = require("./voter/voter.component");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -23,7 +25,7 @@ var AppModule = (function () {
 AppModule = __decorate([
     core_1.NgModule({
         imports: [platform_browser_1.BrowserModule],
-        declarations: [app_component_1.AppComponent, authors_component_1.AuthorsComponent, messages_component_1.MessagesComponent, favorite_component_1.FavoriteComponent, auto_grow_directive_1.AutoGrowDirective],
+        declarations: [app_component_1.AppComponent, authors_component_1.AuthorsComponent, messages_component_1.MessagesComponent, favorite_component_1.FavoriteComponent, auto_grow_directive_1.AutoGrowDirective, like_component_1.LikeComponent, voter_component_1.VoterComponent],
         providers: [authors_service_1.AuthorsService, messages_service_1.MessagesService],
         bootstrap: [app_component_1.AppComponent]
     })

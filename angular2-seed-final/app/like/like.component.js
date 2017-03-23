@@ -10,31 +10,31 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
-var FavoriteComponent = (function () {
-    function FavoriteComponent() {
-        this.isFavorite = false;
-        this.change = new core_1.EventEmitter();
+var LikeComponent = (function () {
+    function LikeComponent() {
+        this.totalLikes = 0;
+        this.iLike = false;
     }
-    FavoriteComponent.prototype.onClick = function () {
-        this.isFavorite = !this.isFavorite;
-        this.change.emit({ newValue: this.isFavorite });
+    LikeComponent.prototype.onClick = function () {
+        this.iLike = !this.iLike;
+        this.totalLikes += this.iLike ? 1 : -1;
     };
-    return FavoriteComponent;
+    return LikeComponent;
 }());
 __decorate([
-    core_1.Input('is-favorite'),
+    core_1.Input("total-likes"),
     __metadata("design:type", Object)
-], FavoriteComponent.prototype, "isFavorite", void 0);
+], LikeComponent.prototype, "totalLikes", void 0);
 __decorate([
-    core_1.Output(),
+    core_1.Input("i-like"),
     __metadata("design:type", Object)
-], FavoriteComponent.prototype, "change", void 0);
-FavoriteComponent = __decorate([
+], LikeComponent.prototype, "iLike", void 0);
+LikeComponent = __decorate([
     core_1.Component({
-        selector: 'favorite',
-        templateUrl: 'app/favorite/favorite.template.html',
-        styles: ["\n        .glyphicon-star {\n            color: orange;\n        }\n    "]
+        selector: 'like',
+        template: "\n    <div>\n    <i\n        class=\"glyphicon glyphicon-heart\"\n        [class.highlighted]=\"iLike\"\n        (click)=\"onClick()\">\n    </i>\n    <span>{{ totalLikes }}</span>\n    </div>\n    ",
+        styles: ["\n        .glyphicon-heart {\n           color: #ccc;\n           cursor: pointer;\n        }\n\n        .highlighted {\n            color: deeppink;\n        }\n    "]
     })
-], FavoriteComponent);
-exports.FavoriteComponent = FavoriteComponent;
-//# sourceMappingURL=favorite.component.js.map
+], LikeComponent);
+exports.LikeComponent = LikeComponent;
+//# sourceMappingURL=like.component.js.map
