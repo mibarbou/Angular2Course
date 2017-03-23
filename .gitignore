@@ -18,3 +18,9 @@ bower_components
 aot/*
 dist/*
 yarn.lock
+angular2-seed-final/app/tweet/tweet.component.js
+angular2-seed-final/app/tweet/tweet.component.js.map
+angular2-seed-final/app/tweet/tweet.service.js
+angular2-seed-final/app/tweet/tweet.service.js.map
+angular2-seed-final/app/tweet/tweets.component.js
+angular2-seed-final/app/tweet/tweets.component.js.map
