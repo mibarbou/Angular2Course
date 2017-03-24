@@ -18,6 +18,12 @@ import { TweetService } from './tweet/tweet.service';
             <div *ngFor="let tweet of tweets">
                 <tweet [data]="tweet"></tweet>
             </div>
+            <zippy title="Who can see my stuff?">
+                Content of who can see my stuff
+            </zippy>
+            <zippy title="Who can contact me?">
+                Content of who can contact me
+            </zippy> 
            `
 })
 
