@@ -1,9 +1,10 @@
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { Component } from '@angular/core';
 import { TweetService } from './tweet/tweet.service';
 
 @Component({
-  selector: 'my-app',
-  template: `<h1>My First Angular 2 App</h1>
+    selector: 'my-app',
+    template: `<h1>My First Angular 2 App</h1>
             <authors></authors>
             <messages></messages>
             <i class="glyphicon glyphicon-star"></i>
@@ -23,14 +24,16 @@ import { TweetService } from './tweet/tweet.service';
             </zippy>
             <zippy title="Who can contact me?">
                 Content of who can contact me
-            </zippy> 
+            </zippy>
+            <contact-form></contact-form>
+            <subscription-form></subscription-form> 
            `
 })
 
 export class AppComponent {
     tweets: any[];
 
-    constructor(tweetService: TweetService){
+    constructor(tweetService: TweetService) {
         this.tweets = tweetService.getTweets();
     }
 
@@ -40,7 +43,7 @@ export class AppComponent {
         isFavorite: true
     }
 
-    onFavoriteChange($event){
+    onFavoriteChange($event) {
         console.log($event);
     }
 
@@ -54,7 +57,7 @@ export class AppComponent {
         myVote: 0
     }
 
-    onVote($event){
+    onVote($event) {
         console.log($event);
     }
 }

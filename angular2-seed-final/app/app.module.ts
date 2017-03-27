@@ -1,6 +1,9 @@
-import { NgModule }      from '@angular/core';
+import { SubscriptionFormComponent } from './subscription/subscription-form.component';
+import { ContactFormComponent } from './contact/contact-form.component';
+import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { AppComponent }   from './app.component';
+import { AppComponent } from './app.component';
+import { FormsModule } from '@angular/forms';
 
 import { AuthorsComponent } from './authors/authors.component';
 import { AuthorsService } from './authors/authors.service';
@@ -19,19 +22,21 @@ import { TweetService } from './tweet/tweet.service';
 import { ZippyComponent } from './zippy/zippy.component';
 
 @NgModule({
-  imports:      [ BrowserModule ],
-  declarations: [ AppComponent,
-                  AuthorsComponent,
-                  MessagesComponent,
-                  FavoriteComponent,
-                  AutoGrowDirective,
-                  LikeComponent,
-                  VoterComponent,
-                  TweetComponent,
-                  TweetsComponent,
-                  ZippyComponent
-                  ],
-  providers: [ AuthorsService, MessagesService, TweetService ],
-  bootstrap:    [ AppComponent ]
+  imports: [BrowserModule, FormsModule],
+  declarations: [AppComponent,
+    AuthorsComponent,
+    MessagesComponent,
+    FavoriteComponent,
+    AutoGrowDirective,
+    LikeComponent,
+    VoterComponent,
+    TweetComponent,
+    TweetsComponent,
+    ZippyComponent,
+    ContactFormComponent,
+    SubscriptionFormComponent
+  ],
+  providers: [AuthorsService, MessagesService, TweetService],
+  bootstrap: [AppComponent]
 })
 export class AppModule { }
